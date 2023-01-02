@@ -2,10 +2,12 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styles from "./AddUser.module.css";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ErrorModal from "../UI/ErrorModal";
 
 const AddUser = (props) => {
+  const genderInputRef = useRef();
+
   const [errorText, setErrorText] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,7 +23,7 @@ const AddUser = (props) => {
       setErrorText("Please input a positive integeric age");
       return;
     }
-    props.submit(newUser);
+    props.submit({ ...newUser, gender: genderInputRef.current.value });
     event.target.reset();
   };
 
@@ -36,6 +38,11 @@ const AddUser = (props) => {
           <input type="text" name="username" id="username" />
           <label htmlFor="age">Age (Years)</label>
           <input type="number" name="age" id="age" />
+          <label>Gender (Years)</label>
+          <select ref={genderInputRef}>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
           <Button type="submit">Add User</Button>
         </form>
       </Card>

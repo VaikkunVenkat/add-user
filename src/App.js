@@ -3,8 +3,8 @@ import UsersList from "./components/Users/UsersList";
 import { useState } from "react";
 
 const EXAMPLE_USER_LIST = [
-  { username: "Vaikkun", age: 25 },
-  { username: "Prabha", age: 27 },
+  { username: "Vaikkun", gender: "M", age: 25 },
+  { username: "Prabha", gender: "F", age: 27 },
 ];
 
 function App() {

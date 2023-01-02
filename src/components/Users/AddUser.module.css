@@ -17,7 +17,8 @@
   background-color: lightcoral;
 }
 
-.input input {
+.input input,
+.input select {
   font: inherit;
   display: block;
   width: 100%;
