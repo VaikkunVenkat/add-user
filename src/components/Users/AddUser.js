@@ -28,7 +28,7 @@ const AddUser = (props) => {
   return (
     <>
       {!!errorText && (
-        <ErrorModal text={errorText} close={() => setErrorText("")} />
+        <ErrorModal text={errorText} hide={() => setErrorText("")} />
       )}
       <Card className={`${styles.input} ${!!errorText && styles.invalid}`}>
         <form onSubmit={handleSubmit}>
